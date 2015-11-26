@@ -1,6 +1,6 @@
 # normalize-obj
 
-Rename keys, and change structure of an object.
+Rename keys, and/or change structure of an object.
 
 # How use
 
@@ -9,11 +9,11 @@ First install module with ```js npm install normalize-obj```
 # Usage
 
 ```js
-var normalizeObject = require('normalize-obj');
+var normalizeObj = require('normalize-obj');
 
 var object = {name: 'Darlan', age: 25, address: {num: '117'}};
 
-var normalized = normalizeObject(object)
+var normalized = normalizeObj(object)
 	.change('name', 'fullname');
 
 // return {fullname: 'Darlan', age: 25, address: {num: '117'}};
@@ -22,20 +22,17 @@ var normalized = normalizeObject(object)
 Methods can be chained, example:
 
 ```js
-normalizeObject(object)
+normalizeObj(object)
 	.change('name', 'fullname')
 	.change('age', 'old');
 
 // return {fullname: 'Darlan', old: 25, address: {num:  '117'}};
 ```
 
-
-## Coming soon
-
 Accept nesting keys, with dot syntax, to change
 
 ```js
-normalizeObject(object)
+normalizeObj(object)
 	.change('address.num', 'address.number');
 
 // return {name: 'Darlan', age: 25, address: {number: '117'}};
@@ -43,13 +40,12 @@ normalizeObject(object)
 
 or change structure too
 ```js
-normalizeObject(object)
+normalizeObj(object)
 	.change('address.num', 'number');
 
 // return {name: 'Darlan', age: 25, number: '117'};
 ```
 
-<!-- 
 #### Important
 On change structure, like below, if old structure don't have others properties, there are deleted. I.e:
 
@@ -65,7 +61,7 @@ var object = {
 	}
 };
 
-normalizeObject(object)
+normalizeObj(object)
 	.change('address.num', 'number');
 
 /* 
@@ -85,7 +81,7 @@ normalizeObject(object)
 */
 
 // now, if dont have properties
-normalizeObject(object)
+normalizeObj(object)
 	.change('phone.mobile', 'mobile');
 
 /* 
@@ -103,7 +99,8 @@ normalizeObject(object)
 */
 
 ```
- -->
+
+
 # Tests
 
 ```js
