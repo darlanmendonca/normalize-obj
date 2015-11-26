@@ -6,14 +6,14 @@
 
 Rename keys, and/or change structure of an object.
 
-# How use
+# Install
 
 First install module with 
 ```js 
 npm install normalize-obj
 ```
 
-# Usage
+# How to use
 
 ```js
 var normalizeObj = require('normalize-obj');
@@ -53,7 +53,7 @@ normalizeObj(object)
 // return {name: 'Darlan', age: 25, number: '117'};
 ```
 
-#### Important
+### Important
 On change structure, like below, if old structure don't have others properties, there are deleted. I.e:
 
 ```js
@@ -108,8 +108,10 @@ normalizeObj(object)
 ```
 
 
-# Tests
+#### Tests
 
 ```js
 npm test
 ```
+
+Enjoy!!
