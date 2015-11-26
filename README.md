@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/darlanmendonca/normalize-obj.svg)](https://travis-ci.org/thebergamo/parsick) 
+[![Coverage Status](https://coveralls.io/repos/darlanmendonca/normalize-obj/badge.svg?branch=master&service=github)](https://coveralls.io/github/darlanmendonca/normalize-obj?branch=master)
+[![npm version](https://badge.fury.io/js/normalize-obj.svg)](https://badge.fury.io/js/normalize-obj)
+
 # normalize-obj
 
 Rename keys, and/or change structure of an object.
