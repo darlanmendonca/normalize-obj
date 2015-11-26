@@ -22,7 +22,7 @@ describe('root keys', function() {
 	it('exception object does not have the key', function() {
 		var normalized = function() {
 			normalizeKeys(object)
-				.rename('lero', 'what');
+				.change('lero', 'what');
 		};
 
 		expect(normalized).to.throw(/^object does not have the key .{1,}$/);
@@ -30,7 +30,7 @@ describe('root keys', function() {
 
 	it('single rename', function() {
 		var normalized = normalizeKeys(object)
-			.rename('nome', 'fullname');
+			.change('nome', 'fullname');
 
 		expect(normalized).to.have.property('fullname').to.be.equal(object.nome);
 		expect(normalized).to.not.have.property('nome');
@@ -39,8 +39,8 @@ describe('root keys', function() {
 
 	it('multiple renames', function() {
 		var normalized = normalizeKeys(object)
-			.rename('nome', 'fullname')
-			.rename('endereco', 'address');
+			.change('nome', 'fullname')
+			.change('endereco', 'address');
 
 		expect(normalized).to.have.property('fullname').to.be.equal(object.nome);
 		expect(normalized).to.not.have.property('nome');
