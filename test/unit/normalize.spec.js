@@ -3,7 +3,7 @@
 
 var expect = require('chai').expect;
 
-var normalizeKeys = require('../../lib/normalize-keys');
+var normalizeKeys = require('../../lib/normalize-object');
 
 var object = {
 	nome: 'Darlan Mendonça',

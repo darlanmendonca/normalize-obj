@@ -1,19 +1,20 @@
-# normalize-keys
+# normalize-object
 
-Return clone of an object, with renamed keys.
+Rename keys, and change structure of an object.
 
 # How use
 
-First install module with ```js npm install normalize-keys```
+First install module with ```js npm install normalize-object```
 
 # Usage
 
 ```js
-var normalizeKeys = require('normalize-keys');
+var normalizeObject = require('normalize-object');
 
 var object = {name: 'Darlan', age: 25, address: {num: '117'}};
-var normalized = normalizeKeys(object)
-	.rename('name', 'fullname');
+
+var normalized = normalizeObject(object)
+	.change('name', 'fullname');
 
 // return {fullname: 'Darlan', age: 25, address: {num: '117'}};
 ```
@@ -21,26 +22,26 @@ var normalized = normalizeKeys(object)
 Methods can be chained, example:
 
 ```js
-normalizeKeys(object)
-	.rename('name', 'fullname')
-	.rename('age', 'old');
+normalizeObject(object)
+	.change('name', 'fullname')
+	.change('age', 'old');
 
 // return {fullname: 'Darlan', old: 25, address: {num:  '117'}};
 ```
 
-<!-- Accept nesting keys, with dot syntax, to rename
+<!-- Accept nesting keys, with dot syntax, to change
 
 ```js
-normalizeKeys(object)
-	.rename('address.num', 'address.number');
+normalizeObject(object)
+	.change('address.num', 'address.number');
 
 // return {name: 'Darlan', age: 25, address: {number: '117'}};
 ```
 
 or change structure too
 ```js
-normalizeKeys(object)
-	.rename('address.num', 'number');
+normalizeObject(object)
+	.change('address.num', 'number');
 
 // return {name: 'Darlan', age: 25, number: '117'};
 ```
@@ -60,8 +61,8 @@ var object = {
 	}
 };
 
-normalizeKeys(object)
-	.rename('address.num', 'number');
+normalizeObject(object)
+	.change('address.num', 'number');
 
 /* 
 	return 
@@ -80,8 +81,8 @@ normalizeKeys(object)
 */
 
 // now, if dont have properties
-normalizeKeys(object)
-	.rename('phone.mobile', 'mobile');
+normalizeObject(object)
+	.change('phone.mobile', 'mobile');
 
 /* 
 	return 

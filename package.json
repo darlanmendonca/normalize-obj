@@ -1,14 +1,14 @@
 {
-  "name": "normalize-keys",
+  "name": "normalize-object",
   "version": "0.0.0",
-  "description": "Rename keys of a javascript object",
+  "description": "Rename keys, and change structure of an object",
   "main": "lib/index.js",
   "scripts": {
     "test": "shell-scripts/test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/darlanmendonca/normalize-keys.git"
+    "url": "https://github.com/darlanmendonca/normalize-object.git"
   },
   "keywords": [
     "object",
@@ -18,10 +18,10 @@
   ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com> (https://github.com/darlanmendonca)",
   "bugs": {
-    "url": "https://github.com/darlanmendonca/normalize-keys/issues"
+    "url": "https://github.com/darlanmendonca/normalize-object/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/darlanmendonca/normalize-keys",
+  "homepage": "https://github.com/darlanmendonca/normalize-object",
   "devDependencies": {
     "chai": "^3.4.1",
     "coveralls": "^2.11.4",
