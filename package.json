@@ -1,0 +1,38 @@
+{
+  "name": "normalize-keys",
+  "version": "0.0.0",
+  "description": "Rename keys of a javascript object",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "shell-scripts/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darlanmendonca/normalize-keys.git"
+  },
+  "keywords": [
+    "object",
+    "key",
+    "rename",
+    "normalize"
+  ],
+  "author": "Darlan Mendonça <darlanmendonca@gmail.com> (https://github.com/darlanmendonca)",
+  "bugs": {
+    "url": "https://github.com/darlanmendonca/normalize-keys/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/darlanmendonca/normalize-keys",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "coveralls": "^2.11.4",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-util": "^3.0.6",
+    "istanbul": "^0.4.0",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "api-chain": "0.0.8"
+  }
+}
