@@ -1,5 +1,5 @@
 {
-  "name": "normalize-object",
+  "name": "normalize-obj",
   "version": "0.0.0",
   "description": "Rename keys, and change structure of an object",
   "main": "lib/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/darlanmendonca/normalize-object.git"
+    "url": "https://github.com/darlanmendonca/normalize-obj.git"
   },
   "keywords": [
     "object",
@@ -18,10 +18,10 @@
   ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com> (https://github.com/darlanmendonca)",
   "bugs": {
-    "url": "https://github.com/darlanmendonca/normalize-object/issues"
+    "url": "https://github.com/darlanmendonca/normalize-obj/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/darlanmendonca/normalize-object",
+  "homepage": "https://github.com/darlanmendonca/normalize-obj",
   "devDependencies": {
     "chai": "^3.4.1",
     "coveralls": "^2.11.4",

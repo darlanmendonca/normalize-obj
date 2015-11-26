@@ -1,15 +1,15 @@
-# normalize-object
+# normalize-obj
 
 Rename keys, and change structure of an object.
 
 # How use
 
-First install module with ```js npm install normalize-object```
+First install module with ```js npm install normalize-obj```
 
 # Usage
 
 ```js
-var normalizeObject = require('normalize-object');
+var normalizeObject = require('normalize-obj');
 
 var object = {name: 'Darlan', age: 25, address: {num: '117'}};
 
