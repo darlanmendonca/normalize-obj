@@ -29,7 +29,10 @@ normalizeObject(object)
 // return {fullname: 'Darlan', old: 25, address: {num:  '117'}};
 ```
 
-<!-- Accept nesting keys, with dot syntax, to change
+
+## Coming soon
+
+Accept nesting keys, with dot syntax, to change
 
 ```js
 normalizeObject(object)
@@ -46,6 +49,7 @@ normalizeObject(object)
 // return {name: 'Darlan', age: 25, number: '117'};
 ```
 
+<!-- 
 #### Important
 On change structure, like below, if old structure don't have others properties, there are deleted. I.e:
 
