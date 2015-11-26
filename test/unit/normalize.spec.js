@@ -102,7 +102,7 @@ describe('NormalizeObj', function() {
 			.to.not.have.property('celular');
 	});
 
-	it('nesting multiple change structure and delete empty parent key', function() {
+	it('nesting multiple change structure, delete empty parent key', function() {
 		var normalized = normalizeObj(object)
 			.change('telefone.trabalho', 'work')
 			.change('telefone.celular', 'mobile');
@@ -119,7 +119,7 @@ describe('NormalizeObj', function() {
 			.to.not.have.property('telefone');
 	});
 
-	it('nesting multiple change structure and keep filled parent key', function() {
+	it('nesting multiple change structure, keep filled parent key', function() {
 		var normalized = normalizeObj(object)
 			.change('telefone.trabalho', 'work');
 
