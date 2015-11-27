@@ -19,13 +19,12 @@ var object = {
 };
 
 describe('NormalizeObj', function() {
-	it('exception when object does not have the key', function() {
-		var normalized = function() {
-			normalizeObj(object)
-				.change('lero', 'what');
-		};
+	it('does nothing, key not exist', function() {
+		var normalized = normalizeObj(object)
+			.change('lero', 'what');
 
-		expect(normalized).to.throw(/^object does not have the key .{1,}$/);
+		expect(normalized).to.not.have.property('lero');
+		expect(normalized).to.not.have.property('what');
 	});
 
 	it('single rename', function() {
