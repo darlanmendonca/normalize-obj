@@ -27,7 +27,7 @@ describe('NormalizeObj', function() {
 		expect(normalized).to.not.have.property('what');
 	});
 
-  it('does rename key with the same name', function() {
+  it('does nothing, rename key with the same name', function() {
 		var normalized = normalizeObj(object)
 			.change('nome', 'nome');
 
