@@ -17,6 +17,9 @@
     "normalize"
   ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com> (https://github.com/darlanmendonca)",
+  "contributors": [
+    "Marcos Bérgamo <marcos@thedon.com.br> (https://github.com/thebergamo)"
+  ],
   "bugs": {
     "url": "https://github.com/darlanmendonca/normalize-obj/issues"
   },
