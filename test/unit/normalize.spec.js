@@ -42,6 +42,14 @@ describe('NormalizeObj', function() {
 		expect(normalized).to.not.have.property('nome');
 	});
 
+  it('single copy', function() {
+    var normalized = normalizeObj(object)
+      .copy('nome', 'nome2');
+
+    expect(normalized).to.have.property('nome2').to.be.equal(object.nome);
+    expect(normalized).to.have.property('nome').to.be.equal(object.nome);
+  });
+
 	it('nesting single rename', function() {
 		var normalized = normalizeObj(object)
 			.change('telefone.celular', 'telefone.mobile');
@@ -55,6 +63,21 @@ describe('NormalizeObj', function() {
 			.to.have.property('telefone')
 			.to.not.have.property('celular');
 	});
+
+  it('nesting single rename copy', function() {
+    var normalized = normalizeObj(object)
+      .copy('telefone.celular', 'telefone.celular2');
+
+    expect(normalized)
+      .to.have.property('telefone')
+      .to.have.property('celular')
+      .to.be.equal(object.telefone.celular);
+
+    expect(normalized)
+      .to.have.property('telefone')
+      .to.have.property('celular2')
+      .to.be.equal(object.telefone.celular);
+  });
 
 	it('nesting single change structure', function() {
 		var normalized = normalizeObj(object)

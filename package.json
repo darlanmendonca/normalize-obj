@@ -1,6 +1,6 @@
 {
   "name": "normalize-obj",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Rename keys, and change structure of an object",
   "main": "lib/index.js",
   "scripts": {
