@@ -4,7 +4,7 @@
   "description": "Rename keys, and change structure of an object",
   "main": "lib/index.js",
   "scripts": {
-    "test": "shell-scripts/test"
+    "test": "scripts/test"
   },
   "repository": {
     "type": "git",
