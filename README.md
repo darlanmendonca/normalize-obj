@@ -16,41 +16,35 @@ npm install normalize-obj
 # How to use
 
 ```js
-var normalizeObj = require('normalize-obj');
+var normalize = require('normalize-obj');
 
 var object = {name: 'Darlan', age: 25, address: {num: '117'}};
 
-var normalized = normalizeObj(object)
-	.change('name', 'fullname');
-
-// return {fullname: 'Darlan', age: 25, address: {num: '117'}};
+var normalized = normalize(object).change('name', 'fullname');
+// => {fullname: 'Darlan', age: 25, address: {num: '117'}};
 ```
 
 Methods can be chained, example:
 
 ```js
-normalizeObj(object)
+normalize(object)
 	.change('name', 'fullname')
 	.change('age', 'old');
-
-// return {fullname: 'Darlan', old: 25, address: {num:  '117'}};
+// => {fullname: 'Darlan', old: 25, address: {num:  '117'}};
 ```
 
-Accept nesting keys, with dot syntax, to change
+Accept nesting keys, with dot syntax, to change key name
 
 ```js
-normalizeObj(object)
-	.change('address.num', 'address.number');
-
-// return {name: 'Darlan', age: 25, address: {number: '117'}};
+normalize(object).change('address.num', 'address.number');
+// => {name: 'Darlan', age: 25, address: {number: '117'}};
 ```
 
 or change structure too
 ```js
-normalizeObj(object)
-	.change('address.num', 'number');
+normalize(object).change('address.num', 'number');
 
-// return {name: 'Darlan', age: 25, number: '117'};
+// => {name: 'Darlan', age: 25, number: '117'};
 ```
 
 ### Important
@@ -68,11 +62,8 @@ var object = {
 	}
 };
 
-normalizeObj(object)
-	.change('address.num', 'number');
-
-/* 
-	return 
+normalize(object).change('address.num', 'number');
+/* => 
 	{
 		number: 1107,
 		// keep address, because have others properties
@@ -88,11 +79,9 @@ normalizeObj(object)
 */
 
 // now, if dont have properties
-normalizeObj(object)
-	.change('phone.mobile', 'mobile');
+normalize(object).change('phone.mobile', 'mobile');
 
-/* 
-	return 
+/* => 
 	{
 		number: 1107,
 		address: {
@@ -109,8 +98,7 @@ normalizeObj(object)
 
 And offer method to copy field
 ```js
-normalizeObj(object)
-  .copy('address.num', 'number');
+normalize(object).copy('address.num', 'number');
 
 // return {name: 'Darlan', age: 25, address: {num: '117'}, number: '117'};
 ```
@@ -120,5 +108,3 @@ normalizeObj(object)
 ```js
 npm test
 ```
-
-Enjoy!!
