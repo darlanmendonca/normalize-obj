@@ -99,8 +99,7 @@ normalize(object).change('phone.mobile', 'mobile');
 And offer method to copy field
 ```js
 normalize(object).copy('address.num', 'number');
-
-// return {name: 'Darlan', age: 25, address: {num: '117'}, number: '117'};
+// => {name: 'Darlan', age: 25, address: {num: '117'}, number: '117'};
 ```
 
 #### Tests
