@@ -8,9 +8,8 @@ Rename keys, and/or change structure of an object.
 
 # Install
 
-First install module with 
 ```js 
-npm install normalize-obj
+npm install normalize-obj --save
 ```
 
 # How to use
