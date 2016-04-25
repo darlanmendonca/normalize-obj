@@ -1,11 +1,10 @@
-/* globals describe, it, before, beforeEach */
 'use strict';
 
-var expect = require('chai').expect;
+let expect = require('chai').expect;
 
-var normalizeObj = require('../../lib/normalize-obj');
+let normalizeObj = require('../../lib/normalize-obj');
 
-var object = {
+let object = {
 	nome: 'Darlan Mendonça',
 	endereco: {
 		rua: 'av. paulista',
@@ -20,7 +19,7 @@ var object = {
 
 describe('NormalizeObj', function() {
 	it('does nothing, key not exist', function() {
-		var normalized = normalizeObj(object).change('lero', 'what');
+		let normalized = normalizeObj(object).change('lero', 'what');
 
 		expect(normalized)
       .to.not.have.property('lero');
@@ -29,13 +28,13 @@ describe('NormalizeObj', function() {
 	});
 
   it('does nothing, rename key with the same name', function() {
-		var normalized = normalizeObj(object).change('nome', 'nome');
+		let normalized = normalizeObj(object).change('nome', 'nome');
 
 		expect(normalized).to.have.property('nome');
   });
 
 	it('single rename', function() {
-		var normalized = normalizeObj(object).change('nome', 'fullname');
+		let normalized = normalizeObj(object).change('nome', 'fullname');
 
 		expect(normalized)
       .to.have.property('fullname')
@@ -45,7 +44,7 @@ describe('NormalizeObj', function() {
 	});
 
   it('single copy', function() {
-    var normalized = normalizeObj(object).copy('nome', 'nome2');
+    let normalized = normalizeObj(object).copy('nome', 'nome2');
 
     expect(normalized)
       .to.have.property('nome2')
@@ -56,7 +55,7 @@ describe('NormalizeObj', function() {
   });
 
 	it('nesting single rename', function() {
-		var normalized = normalizeObj(object).change('telefone.celular', 'telefone.mobile');
+		let normalized = normalizeObj(object).change('telefone.celular', 'telefone.mobile');
 
 		expect(normalized)
 			.to.have.property('telefone')
@@ -68,7 +67,7 @@ describe('NormalizeObj', function() {
 	});
 
   it('nesting single rename copy', function() {
-    var normalized = normalizeObj(object).copy('telefone.celular', 'telefone.celular2');
+    let normalized = normalizeObj(object).copy('telefone.celular', 'telefone.celular2');
 
     expect(normalized)
       .to.have.property('telefone')
@@ -81,7 +80,7 @@ describe('NormalizeObj', function() {
   });
 
 	it('nesting single change structure', function() {
-		var normalized = normalizeObj(object).change('telefone.celular', 'mobile');
+		let normalized = normalizeObj(object).change('telefone.celular', 'mobile');
 
 		expect(normalized)
 			.to.have.property('mobile')
@@ -92,7 +91,7 @@ describe('NormalizeObj', function() {
 	});
 
 	it('multiple renames', function() {
-		var normalized = normalizeObj(object)
+		let normalized = normalizeObj(object)
 			.change('nome', 'fullname')
 			.change('endereco', 'address');
 
@@ -109,7 +108,7 @@ describe('NormalizeObj', function() {
 	});
 
 	it('nesting multiple renames', function() {
-		var normalized = normalizeObj(object)
+		let normalized = normalizeObj(object)
 			.change('telefone', 'phones')
 			.change('phones.trabalho', 'phones.work')
 			.change('phones.celular', 'phones.mobile');
@@ -129,7 +128,7 @@ describe('NormalizeObj', function() {
 	});
 
 	it('nesting multiple change structure, delete empty parent key', function() {
-		var normalized = normalizeObj(object)
+		let normalized = normalizeObj(object)
 			.change('telefone.trabalho', 'work')
 			.change('telefone.celular', 'mobile');
 
@@ -144,7 +143,7 @@ describe('NormalizeObj', function() {
 	});
 
 	it('nesting multiple change structure, keep filled parent key', function() {
-		var normalized = normalizeObj(object).change('telefone.trabalho', 'work');
+		let normalized = normalizeObj(object).change('telefone.trabalho', 'work');
 
 		expect(normalized)
 			.to.have.property('work')
