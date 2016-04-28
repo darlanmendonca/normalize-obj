@@ -2,7 +2,7 @@
 
 let expect = require('chai').expect;
 
-let normalizeObj = require('../../lib/normalize-obj');
+let normalizeObj = require('../../app/index.js');
 
 let object = {
 	nome: 'Darlan Mendonça',
